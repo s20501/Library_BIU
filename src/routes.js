@@ -7,16 +7,24 @@ import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
 import Books from "views/Books.js";
+import Book from "views/Book.js";
 import Users from "views/Users.js";
 
 
-var routes = [
+const routes = [
   {
     path: "/books",
     name: "Books",
     icon: "ni ni-books text-orange",
     component: Books,
     layout: "/admin",
+  },
+  {
+    path: "/book/:id",
+    name: "Book",
+    component: Book,
+    layout: "/admin",
+    hideNav: true
   },
   {
     path: "/users",

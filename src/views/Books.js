@@ -11,6 +11,7 @@ import {
 import Header from "components/Headers/Header.js";
 import booksData from "data/books.js"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Books = () => {
 
@@ -39,7 +40,9 @@ const Books = () => {
 
                                         <tr>
 
-                                            <td>{b.name}</td>
+                                            <td>
+                                                <Link to={`/admin/book/${b.id}`}>{b.name}</Link>
+                                            </td>
                                             <td>{b.ISBN}</td>
 
                                         </tr>
