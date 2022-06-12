@@ -6,8 +6,25 @@ import Register from "views/examples/Register.js";
 import Login from "views/examples/Login.js";
 import Tables from "views/examples/Tables.js";
 import Icons from "views/examples/Icons.js";
+import Books from "views/Books.js";
+import Users from "views/Users.js";
+
 
 var routes = [
+  {
+    path: "/books",
+    name: "Books",
+    icon: "ni ni-books text-orange",
+    component: Books,
+    layout: "/admin",
+  },
+  {
+    path: "/users",
+    name: "Users",
+    icon: "ni ni-single-02 text-blue",
+    component: Users,
+    layout: "/admin",
+  },
   {
     path: "/index",
     name: "Dashboard",
