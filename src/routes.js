@@ -9,6 +9,7 @@ import Icons from "views/examples/Icons.js";
 import Books from "views/Books.js";
 import Book from "views/Book.js";
 import Users from "views/Users.js";
+import User from "views/User.js"
 
 
 const routes = [
@@ -32,6 +33,13 @@ const routes = [
     icon: "ni ni-single-02 text-blue",
     component: Users,
     layout: "/admin",
+  },
+  {
+    path: "/user/:id",
+    name: "User",
+    component: User,
+    layout: "/admin",
+    hideNav: true
   },
   {
     path: "/index",
