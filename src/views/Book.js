@@ -35,7 +35,7 @@ const Book = () => {
                         <Button
                             className="float-right"
                             color="default"
-                            onClick={() => history.push("/admin/books")}
+                            onClick={() => history.push(`/admin/bookEdit/${id}`)}
                             size="sm"
                         >
                             Edit

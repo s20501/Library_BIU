@@ -4,6 +4,7 @@ import Books from "views/Books.js";
 import Book from "views/Book.js";
 import Users from "views/Users.js";
 import User from "views/User.js"
+import BookEdit from "views/BookEdit";
 
 
 const routes = [
@@ -18,6 +19,13 @@ const routes = [
     path: "/book/:id",
     name: "Book",
     component: Book,
+    layout: "/admin",
+    hideNav: true
+  },
+  {
+    path: "/bookEdit/:id",
+    name: "BookEdit",
+    component: BookEdit,
     layout: "/admin",
     hideNav: true
   },
