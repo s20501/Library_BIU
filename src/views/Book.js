@@ -3,12 +3,14 @@ import {
     Card,
     CardHeader,
     CardBody,
-    Row,
-    Col,
+
 } from "reactstrap";
 import Header from "components/Headers/Header.js";
 import booksData from "data/books.js"
-import { useState } from "react/cjs/react.production.min";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+
+
 
 
 const { useParams } = require("react-router-dom");
@@ -18,12 +20,28 @@ const { useParams } = require("react-router-dom");
 const Book = () => {
 
     let { id } = useParams();
-    const book = booksData.find(b => b.id === parseInt(id));
+    const [book] = useState(booksData.find(b => b.id === parseInt(id)));
+    const history = useHistory();
+
 
     return (
         <>
             <Header />
             <Card className="card-profile shadow">
+
+                <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                    <div className="d-flex justify-content-end">
+
+                        <Button
+                            className="float-right"
+                            color="default"
+                            onClick={() => history.push("/admin/books")}
+                            size="sm"
+                        >
+                            Edit
+                        </Button>
+                    </div>
+                </CardHeader>
 
                 <CardBody className="pt-0 pt-md-4">
 
