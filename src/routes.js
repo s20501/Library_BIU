@@ -1,5 +1,4 @@
 
-import Profile from "views/examples/Profile.js";
 import Books from "views/Books.js";
 import Book from "views/Book.js";
 import Users from "views/Users.js";
@@ -43,12 +42,5 @@ const routes = [
     layout: "/admin",
     hideNav: true
   },
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    icon: "ni ni-single-02 text-yellow",
-    component: Profile,
-    layout: "/admin",
-  }
 ];
 export default routes;
