@@ -6,7 +6,7 @@ import {
 
 } from "reactstrap";
 import Header from "components/Headers/Header.js";
-import booksData from "data/books.js"
+import booksData from "data/books.js";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
