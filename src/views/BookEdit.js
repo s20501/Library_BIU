@@ -20,7 +20,12 @@ const { useParams } = require("react-router-dom");
 const BookEdit = () => {
 
     let { id } = useParams();
-    const [book] = useState(booksData.find(b => b.id === parseInt(id)));
+    const [book] = useState(booksData.find(b => b.id === parseInt(id)) || {});
+
+    function handleSubmit(event) {
+        alert('Book saved!');
+        event.preventDefault();
+    }
 
     return (
         <>
@@ -31,20 +36,11 @@ const BookEdit = () => {
                         <Col xs="8">
                             <h3 className="mb-0">Book</h3>
                         </Col>
-                        <Col className="text-right" xs="4">
-                            <Button
-                                color="primary"
-                                href="#pablo"
-                                onClick={(e) => e.preventDefault()}
-                                size="sm"
-                            >
-                                Save
-                            </Button>
-                        </Col>
+
                     </Row>
                 </CardHeader>
                 <CardBody>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <div className="pl-lg-4">
                             <Row>
                                 <Col lg="6">
@@ -96,6 +92,14 @@ const BookEdit = () => {
                                 </Col>
 
                             </Row>
+                            <Row><Col>
+                                <Button
+                                    color="primary"
+                                    size="sm"
+                                    type="submit"
+                                >
+                                    Save
+                                </Button></Col></Row>
                         </div>
 
                     </Form>
