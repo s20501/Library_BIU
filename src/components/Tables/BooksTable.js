@@ -3,13 +3,8 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-
-const { useState } = require("react");
-
-
 const BooksTable = (props) => {
 
-    const [books] = useState(props.booksData);
 
     return (<>
 
@@ -21,7 +16,7 @@ const BooksTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {books.map(b =>
+                {props.booksData.map(b =>
 
                     <tr key={b.ISBN}>
 

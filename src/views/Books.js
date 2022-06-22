@@ -13,7 +13,7 @@ import booksData from "data/books.js"
 import { useHistory } from "react-router-dom";
 import BooksTable from "components/Tables/BooksTable";
 import SearchBox from "components/SearchBox";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 const Books = () => {
@@ -23,7 +23,7 @@ const Books = () => {
 
 
     function handeSetData(data) {
-        console.log(data)
+        setBooks(booksData.filter(b => (b.name.trim().toLowerCase()).includes(data.trim().toLowerCase())))
     }
 
 
