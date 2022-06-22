@@ -23,7 +23,7 @@ const BooksTable = (props) => {
             <tbody>
                 {books.map(b =>
 
-                    <tr>
+                    <tr key={b.ISBN}>
 
                         <td>
                             <Link to={`/admin/book/${b.id}`}>{b.name}</Link>

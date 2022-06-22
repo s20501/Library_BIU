@@ -12,11 +12,21 @@ import Header from "components/Headers/Header.js";
 import booksData from "data/books.js"
 import { useHistory } from "react-router-dom";
 import BooksTable from "components/Tables/BooksTable";
+import SearchBox from "components/SearchBox";
+import { useEffect, useState } from "react";
 
 
 const Books = () => {
+    const [books, setBooks] = useState(booksData);
 
     const history = useHistory();
+
+
+    function handeSetData(data) {
+        console.log(data)
+    }
+
+
 
     return (
         <>
@@ -28,6 +38,7 @@ const Books = () => {
                         <Card className="shadow">
                             <CardHeader className="border-0">
                                 <h3 className="mb-0">Books</h3>
+
                                 <Button
                                     color="primary"
                                     size="sm"
@@ -37,8 +48,11 @@ const Books = () => {
                                 >
                                     Add new
                                 </Button>
+
                             </CardHeader>
-                            <BooksTable booksData={booksData} />
+                            <SearchBox setData={handeSetData} />
+
+                            <BooksTable booksData={books} />
 
                         </Card>
                     </div>
