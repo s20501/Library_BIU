@@ -3,7 +3,6 @@
 import {
     Card,
     CardHeader,
-    Table,
     Container,
     Row,
     Button
@@ -11,14 +10,12 @@ import {
 // core components
 import Header from "components/Headers/Header.js";
 import booksData from "data/books.js"
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import BooksTable from "components/Tables/BooksTable";
 
 
 const Books = () => {
 
-    const [books] = useState(booksData);
     const history = useHistory();
 
     return (
@@ -41,28 +38,7 @@ const Books = () => {
                                     Add new
                                 </Button>
                             </CardHeader>
-                            <Table className="align-items-center table-flush" >
-                                <thead className="thead-light">
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">ISBN</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {books.map(b =>
-
-                                        <tr>
-
-                                            <td>
-                                                <Link to={`/admin/book/${b.id}`}>{b.name}</Link>
-                                            </td>
-                                            <td>{b.ISBN}</td>
-
-                                        </tr>
-
-                                    )}
-                                </tbody>
-                            </Table>
+                            <BooksTable booksData={booksData} />
 
                         </Card>
                     </div>
