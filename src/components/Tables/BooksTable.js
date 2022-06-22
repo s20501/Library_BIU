@@ -1,5 +1,4 @@
 import {
-
     Table,
 } from "reactstrap";
 import { Link } from "react-router-dom";

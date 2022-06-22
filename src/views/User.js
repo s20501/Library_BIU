@@ -6,14 +6,17 @@ import {
 } from "reactstrap";
 import Header from "components/Headers/Header.js";
 import usersData from "data/users.js";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useMemo, useState } from "react";
+import BooksTable from "components/Tables/BooksTable";
+import booksData from "data/books.js"
+
 const { useParams } = require("react-router-dom");
 const User = () => {
 
     let { id } = useParams();
     const [user] = useState(usersData.find(b => b.id === parseInt(id)));
-    const history = useHistory();
+    const booksFiltered = useMemo(() => booksData.filter(b => b.owner === user.name), [user.name]);
+
     return <>
         <Header />
         <Card className="card-profile shadow">
@@ -37,8 +40,10 @@ const User = () => {
                     </div>
 
                     <hr className="my-4" />
-
                 </div>
+
+                <p>Borrowed books:</p >
+                <BooksTable booksData={booksFiltered} />
             </CardBody>
         </Card>
     </>;

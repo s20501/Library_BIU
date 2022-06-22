@@ -27,7 +27,7 @@ const Books = () => {
                     <div className="col">
                         <Card className="shadow">
                             <CardHeader className="border-0">
-                                <h3 className="mb-0">Add new</h3>
+                                <h3 className="mb-0">Books</h3>
                                 <Button
                                     color="primary"
                                     size="sm"
