@@ -3,7 +3,6 @@
 import {
     Card,
     CardHeader,
-    Table,
     Container,
     Row,
 } from "reactstrap";
@@ -11,7 +10,6 @@ import {
 import Header from "components/Headers/Header.js";
 import usersData from "data/users.js"
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import UsersTable from "components/Tables/UsersTable";
 
 const Users = () => {
