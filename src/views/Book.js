@@ -70,7 +70,7 @@ const Book = () => {
                         </h3>
                         <div className="h5 font-weight-300">
                             <i className="ni location_pin mr-2" />
-                            {book.author}
+                            Author: {book.author}
                         </div>
 
                         <div className="h5 font-weight-300">
@@ -79,6 +79,10 @@ const Book = () => {
 
                         </div>
 
+                        <div className="h5 font-weight-300">
+                            <i className="ni location_pin mr-2" />
+                            {book.owner && `Owner: ${book.owner}`}
+                        </div>
 
                         <hr className="my-4" />
 
