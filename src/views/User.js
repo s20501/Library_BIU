@@ -9,6 +9,7 @@ import usersData from "data/users.js";
 import { useMemo, useState } from "react";
 import BooksTable from "components/Tables/BooksTable";
 import booksData from "data/books.js"
+import UserProfile from "components/Profils/UserProfile";
 
 const { useParams } = require("react-router-dom");
 const User = () => {
@@ -30,14 +31,7 @@ const User = () => {
             <CardBody className="pt-0 pt-md-4">
 
                 <div className="text-center">
-                    <h3>
-                        {user.name}
-                        <span className="font-weight-light"></span>
-                    </h3>
-                    <div className="h5 font-weight-300">
-                        <i className="ni location_pin mr-2" />
-                        {user.email}
-                    </div>
+                    <UserProfile user={user} />
 
                     <hr className="my-4" />
                 </div>
