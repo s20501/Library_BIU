@@ -10,6 +10,7 @@ import booksData from "data/books.js";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import dayjs from "dayjs";
+import BookProfile from "components/Profils/BookProfile";
 
 
 
@@ -64,25 +65,7 @@ const Book = () => {
                 <CardBody className="pt-0 pt-md-4">
 
                     <div className="text-center">
-                        <h3>
-                            {book.name}, {book.ISBN}
-                            <span className="font-weight-light"></span>
-                        </h3>
-                        <div className="h5 font-weight-300">
-                            <i className="ni location_pin mr-2" />
-                            Author: {book.author}
-                        </div>
-
-                        <div className="h5 font-weight-300">
-                            <i className="ni location_pin mr-2" />
-                            {book.term && `Term: ${book.term}`}
-
-                        </div>
-
-                        <div className="h5 font-weight-300">
-                            <i className="ni location_pin mr-2" />
-                            {book.owner && `Owner: ${book.owner}`}
-                        </div>
+                        <BookProfile book={book} />
 
                         <hr className="my-4" />
 
