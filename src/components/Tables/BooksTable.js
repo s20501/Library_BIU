@@ -4,8 +4,6 @@ import {
 import BookRow from "./BookRow";
 
 const BooksTable = (props) => {
-
-
     return (<>
 
         <Table className="align-items-center table-flush" >

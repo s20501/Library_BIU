@@ -1,7 +1,7 @@
 import {
     Table,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import UserRow from "./UserRow";
 
 const UsersTable = (props) => {
 
@@ -16,17 +16,8 @@ const UsersTable = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.users.map(b =>
-
-                    <tr>
-
-                        <td>
-                            <Link to={`/admin/user/${b.id}`}>{b.name}</Link>
-                        </td>
-                        <td>{b.email}</td>
-
-                    </tr>
-
+                {props.users.map(u =>
+                    <UserRow row={u} />
                 )}
             </tbody>
         </Table>
