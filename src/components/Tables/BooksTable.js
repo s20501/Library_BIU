@@ -1,7 +1,7 @@
 import {
     Table,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import BookRow from "./BookRow";
 
 const BooksTable = (props) => {
 
@@ -17,16 +17,7 @@ const BooksTable = (props) => {
             </thead>
             <tbody>
                 {props.booksData.map(b =>
-
-                    <tr key={b.ISBN}>
-
-                        <td>
-                            <Link to={`/admin/book/${b.id}`}>{b.name}</Link>
-                        </td>
-                        <td>{b.ISBN}</td>
-
-                    </tr>
-
+                    <BookRow row={b} />
                 )}
             </tbody>
         </Table>
